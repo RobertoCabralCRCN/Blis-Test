@@ -1,0 +1,315 @@
+{
+	"info": {
+		"_postman_id": "e02bc32a-996d-4d17-b6e0-8cec2f428523",
+		"name": "Test-Blis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25774681"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"john.doe@example.com\",\n  \"password\": \"password123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@example.com\",\n  \"password\": \"password123\",\n  \"birthdate\": \"1990-01-01\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User Document",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MzQ5OTc2ODAsImV4cCI6MTczNTA4NDA4MCwic3ViIjoiZDk3YzM3OWItYTFlMS00MjcxLWE2ZGEtNDFlZjBmMDIyNmU1In0.zE6fvudgCuwWZ42BrndV28KneyymzxNbPxUqq5anqfc",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/pdf",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_id",
+							"value": "d97c379b-a1e1-4271-a6da-41ef0f0226e5",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Comprovante.pdf",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/N2140/Downloads/Comprovante.pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/user-documents",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user-documents"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Abilities",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MzQ5OTc2ODAsImV4cCI6MTczNTA4NDA4MCwic3ViIjoiZDk3YzM3OWItYTFlMS00MjcxLWE2ZGEtNDFlZjBmMDIyNmU1In0.zE6fvudgCuwWZ42BrndV28KneyymzxNbPxUqq5anqfc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"Desenvolvedor\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/abilities",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"abilities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Abilities",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MzQ5OTc2ODAsImV4cCI6MTczNTA4NDA4MCwic3ViIjoiZDk3YzM3OWItYTFlMS00MjcxLWE2ZGEtNDFlZjBmMDIyNmU1In0.zE6fvudgCuwWZ42BrndV28KneyymzxNbPxUqq5anqfc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"active\": true}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/abilities/65b43f6e-c37b-409f-b496-3df44803ab30",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"abilities",
+						"65b43f6e-c37b-409f-b496-3df44803ab30"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User-Abilities",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MzQ5OTg0NTIsImV4cCI6MTczNTA4NDg1Miwic3ViIjoiZDk3YzM3OWItYTFlMS00MjcxLWE2ZGEtNDFlZjBmMDIyNmU1In0._-ka59s8QG_40u0mdv7FRQ_OkZ4KlnUX2qomKT6CAwA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"user_id\": \"d97c379b-a1e1-4271-a6da-41ef0f0226e5\",\n  \"ability_id\": \"65b43f6e-c37b-409f-b496-3df44803ab30\",\n  \"years_experience\": 3\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user-abilities",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user-abilities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List User-Abilities",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MzQ5OTg0NTIsImV4cCI6MTczNTA4NDg1Miwic3ViIjoiZDk3YzM3OWItYTFlMS00MjcxLWE2ZGEtNDFlZjBmMDIyNmU1In0._-ka59s8QG_40u0mdv7FRQ_OkZ4KlnUX2qomKT6CAwA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/user-abilities/d97c379b-a1e1-4271-a6da-41ef0f0226e5?page=1&limit=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user-abilities",
+						"d97c379b-a1e1-4271-a6da-41ef0f0226e5"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User-Abilities",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MzQ5OTg0NTIsImV4cCI6MTczNTA4NDg1Miwic3ViIjoiZDk3YzM3OWItYTFlMS00MjcxLWE2ZGEtNDFlZjBmMDIyNmU1In0._-ka59s8QG_40u0mdv7FRQ_OkZ4KlnUX2qomKT6CAwA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"user_id\": \"d97c379b-a1e1-4271-a6da-41ef0f0226e5\",\n  \"ability_ids\": [\"65b43f6e-c37b-409f-b496-3df44803ab30\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user-abilities",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user-abilities"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
