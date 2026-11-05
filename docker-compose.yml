@@ -9,7 +9,7 @@ services:
       - 5432:5432
     environment:
       - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=Hos32575@
+      - POSTGRES_PASSWORD=PassW0rd
       - POSTGRES_DB=blis
     volumes:
       - pgdata:/data/postgres
